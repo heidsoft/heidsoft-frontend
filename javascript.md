@@ -1,4 +1,4 @@
-#JavaScript编程技巧#
+#Js面向对象#
 
     //定义三角形
     function Rectangle(length,width){
@@ -21,6 +21,16 @@
       this.getColor = function(){
           return this.color;
       };
+    }//定义了一个子类ColorRectangle继承Rectangle
+    
+    function ColorRectangle(){
+    
     }
+    
+    ColorRectangle.prototype = new Rectangle("","");
+    ColorRectangle.prototype.color = "";
+    ColorRectangle.prototype.getColor = function(){
+        return this.color;
+    };//另一种定义ColorRectangle的方式
     
     
