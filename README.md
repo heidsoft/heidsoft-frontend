@@ -1,8 +1,12 @@
-jsweb
+交互设计学习
 =====
 
-#Ajax学习指南#
-##javascript##
+#Aboute#
+这个项目主要用于记录交互设计学习的笔记和思想
+
+##目录##
+
+* [JavaScript](./javascript.md)
 
 ##HTML5##
 ##CSS3##
