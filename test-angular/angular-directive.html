@@ -116,7 +116,7 @@
             .directive('myCustomer2', function() {
                 //Template-expanding directive
                 return {
-                    templateUrl: 'my-customer.html'
+                    templateUrl: '../my-customer.html'
                 };
             })
             .directive('myCustomer3', function() {
@@ -141,7 +141,7 @@
                     scope: {
                         customerInfo: '=info'
                     },
-                    templateUrl: 'my-customer-iso.html'
+                    templateUrl: '../my-customer-iso.html'
                 };
             })
             .directive('myCurrentTime', ['$interval', 'dateFilter', function ($interval, dateFilter) {
@@ -179,7 +179,7 @@
                     scope: {
                         customerInfo: '=info'
                     },
-                    templateUrl: 'my-customer-plus-vojta.html'
+                    templateUrl: '../my-customer-plus-vojta.html'
                 };
             })
             .directive('myDialog', function () {
@@ -187,7 +187,7 @@
                     restrict: 'E',
                     transclude: true,//表示在元素之间可,嵌入内容
                     scope: {},
-                    templateUrl: 'my-dialog.html'
+                    templateUrl: '../my-dialog.html'
                 };
             })
             .directive('myDialog2', function () {
@@ -195,7 +195,7 @@
                     restrict: 'E',
                     transclude: true,
                     scope: {},
-                    templateUrl: 'my-dialog.html',
+                    templateUrl: '../my-dialog.html',
                     link: function (scope) {
                         scope.name = '测试';
                     }
@@ -208,7 +208,7 @@
                     scope: {
                         'close': '&onClose'
                     },
-                    templateUrl: 'my-dialog-close.html'
+                    templateUrl: '../my-dialog-close.html'
                 };
             })
             .directive('myDraggable', ['$document', function ($document) {
@@ -270,7 +270,7 @@
                             panes.push(pane);
                         };
                     }],
-                    templateUrl: 'my-tabs.html'
+                    templateUrl: '../my-tabs.html'
                 };
             })
             .directive('myPane', function () {
@@ -284,7 +284,7 @@
                     link: function (scope, element, attrs, tabsCtrl) {
                         tabsCtrl.addPane(scope);
                     },
-                    templateUrl: 'my-pane.html'
+                    templateUrl: '../my-pane.html'
                 };
             });
 </script>

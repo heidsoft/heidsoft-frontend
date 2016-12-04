@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var e = jQuery.Event("click" );
+            console.log(e);
+            // trigger an artificial click event
+            jQuery( "body" ).trigger( e );
+
+            var el = document.getElementById('div-03');
+            console.log(el);
+
+            var r1 = el.closest("#div-02");
+            // returns the element with the id=div-02
+            console.log(r1);
+
+            var r2 = el.closest("div div");
+            // returns the closest ancestor which is a div in div, here is div-03 itself
+            console.log(r2);
+
+            var r3 = el.closest("article > div");
+            // returns the closest ancestor which is a div and has a parent article, here is div-01
+            console.log(r3);
+
+            var r4 = el.closest(":not(div)");
+            // returns the closest ancestor which is not a div, here is the outmost article
+            console.log(r4);
+        });
+    </script>
+</head>
+<body>
+<article>
+    <div id="div-01">Here is div-01
+        <div id="div-02">Here is div-02
+            <div id="div-03">Here is div-03</div>
+        </div>
+    </div>
+</article>
+</body>
+</html>
