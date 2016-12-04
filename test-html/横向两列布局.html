@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>横向两列布局</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #wrap{
+            width: 1360px;
+            background: black;
+            margin: 0px auto;
+        }
+        #header{
+            background: red;
+            width: 100%;
+        }
+        #mainbody{
+            background: green;
+            width: 100%;
+            overflow: hidden;/*使用overflow清除浮动*/
+        }
+        #footer{
+            background: yellow;
+            width: 100%;
+        }
+        .left{
+            background: white;
+            width: 1000px;
+            height: 200px;
+            float: left;
+            margin-right: 60px;
+        }
+        .right{
+            background: black;
+            width: 300px;
+            height: 500px;
+            float: left;
+        }
+        /*clear:both 主要用于清除相邻元素的受浮动影响*/
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">头部</div>
+    <div id="mainbody">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div id="footer">版权</div>
+</div>
+</body>
+</html>
