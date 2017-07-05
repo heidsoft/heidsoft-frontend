@@ -20,12 +20,30 @@
 
         .div3 {
             border-left-style: dashed;
+            border-radius: 100%;
         }
 
         .div4 {
             border: 4px solid red;
             border-left-width: 1px;
             border-right: none;
+        }
+        li{
+            list-style: lower-roman;
+            margin-bottom: 8px;
+        }
+        li.test1{
+            color: red;
+        }
+        li.test2{
+            color: green;
+        }
+
+        .div5{
+            float: left;
+        }
+        .div6{
+            clear: both;
         }
     </style>
 </head>
@@ -45,5 +63,17 @@
 <div class="div4">
     css 使用样式div4
 </div>
+
+<div class="div5">
+    <li class="test1">book1</li>
+    <li class="test2">book2</li>
+    <li>book3</li>
+    <li>book4</li>
+    <div class="div6">
+        clear清除浮动样式
+    </div>
+</div>
+
+
 </body>
 </html>
