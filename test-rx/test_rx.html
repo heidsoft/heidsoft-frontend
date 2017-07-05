@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>测试rx</title>
+	<script src="https://cdn.bootcss.com/rxjs/5.4.1/Rx.js"></script>
+	<style type="text/css">
+		.test-button{
+			width: 80px;
+			height: 20px;
+			color: #318700;
+		}
+		.test-text{
+			width: 80px;
+			height: 20px;
+			color: #318700;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	<button class="test-button">测试RX</button>
+	</div>
+
+	<div>
+		<input type="text" id="text" class="test-text">
+	</div>
+</body>
+	<script type="text/javascript">
+		// var button = document.querySelector('button');
+		// button.addEventListener('click', () => console.log('Clicked!'));
+
+		// var button = document.querySelector('button');
+		// Rx.Observable.fromEvent(button, 'click')
+		//   .scan(count => count + 1, 0)
+		//   .subscribe(count => console.log(`Clicked ${count} times`));
+
+		// var count = 0;
+		// var rate = 1000;
+		// var lastClick = Date.now() - rate;
+		// var button = document.querySelector('button');
+		// button.addEventListener('click', () => {
+		//   if (Date.now() - lastClick >= rate) {
+		//     console.log(`Clicked ${++count} times`);
+		//     lastClick = Date.now();
+		//   }
+		// });
+
+		// var button = document.querySelector('button');
+		// Rx.Observable.fromEvent(button, 'click')
+		//   .throttleTime(1000)
+		//   .map(event => event.clientX)
+		//   .scan((count, clientX) => count + clientX, 0)
+		//   .subscribe(count => console.log(count));
+
+		var text = document.querySelector("#text");
+		Rx.Observable.fromEvent(text, 'keyup')
+             .subscribe(e => console.log(e));
+
+         Rx.Observable.of(2)
+         .map(v => 10 * v)
+         .subscribe(v => console.log(v));
+
+
+		
+	</script>
+</html>
