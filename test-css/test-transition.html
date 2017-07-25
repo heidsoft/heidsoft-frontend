@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单个过度测试</title>
+    <style>
+        .transition-demo{
+          background: #8ec63f;
+          width: 100px;
+          height: 100px;
+          /*设置半径*/
+          border-radius: .5em;
+
+          transition: background 2s linear 2s, border-radius 3s ease-in 4s;
+        }
+        .transition-demo:hover{
+        	background: #f7941d;
+        	border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="transition-demo">
+        单个属性过度
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多个属性过度测试</title>
+    <style>
+        .transition-demo{
+          background: #8ec63f;
+          width: 100px;
+          height: 100px;
+          /*设置半径*/
+          border-radius: .5em;
+
+          transition: background,height,width 1s,1s,1s linear,linear,linear 2s,2s,2s;
+        }
+        .transition-demo:hover{
+        	background: #f7941d;
+        	border-radius: 50%;
+          width: 300px;
+          height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="transition-demo">
+        多个属性过度
+    </div>
+</body>
+</html>
