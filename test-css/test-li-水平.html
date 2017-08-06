@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>li水平菜单</title>
+	<style type="text/css">
+		body{
+			margin: 0 0;
+			margin-bottom: 120px;
+		}
+		/*main 主元素*/
+		.main{
+			/*width: 600px;*/
+			max-width: 600px;
+			background: rgb(171, 235, 198);
+			margin: 0 auto;
+		}
+		/*使main class 中的li 元素变为行级元素*/
+		.main >li{
+			display: inline;
+		}
+		.simple{
+			width: 500px;
+			margin: 20px auto;
+			background: rgb(250, 215, 160);
+			box-sizing: border-box;
+		}
+		.fancy{
+			width: 500px;
+			margin: 20px auto;
+			padding: 50px;
+			border-width: 10px;
+			border-color: rgb(250, 215, 160);
+			background: rgb(118, 215, 196);
+			box-sizing: border-box;
+		}
+		
+		/*positon 使用*/
+		.static{
+			position: static;
+		}
+		/*相对的postion 实例1*/
+		.relative1{
+			position: relative;
+		}
+		/*相对的postion 实例2*/
+		.relative2{
+			position: relative;
+			top:-20px;
+			left: 20px;
+		}
+		/*固定的postion*/
+		.fix{
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			width: 200px;
+  			background-color: rgb(118, 215, 196);
+		}
+		/*相对定位，如果没有加其他属性，则效果与static一样*/
+		.relative{
+			position: relative;
+		    width: 600px;
+		    height: 400px;
+		    background: rgb(250, 215, 160);
+		}
+		/*绝对定位*/
+		.absolute{
+			position: absolute;
+			top: 120px;
+		    right: 0;
+		    background-color: rgb(118, 215, 196);
+		    width: 400px;
+		    height: 200px;
+
+		}
+		.container{
+			position: relative;
+		}
+		nav{
+			position: absolute;
+			width: 200px;
+			color: rgb(118, 215, 196);
+		}
+		section{
+			margin-left: 200px;
+			color: rgb(250, 215, 160);
+			height: 200px;
+		}
+		footer{
+			position: fixed;
+			bottom: 0;
+			height: 70px;
+			left: 0;
+			width: 100%;
+			background-color: rgb(133, 193, 233);
+		}
+		img{
+			float: right;
+  			margin: 0 0 1em 1em;
+		}
+		.box{
+			overflow: auto;
+			float: left;
+			width: 200px;
+			height: 10px
+			margin:1em;
+			border:2px solid;
+			border-radius:25px;
+		}
+		.after-box{
+		  clear: left;
+		}
+
+		@media screen and (min-width:600px) {
+		  nav {
+		    float: left;
+		    width: 25%;
+		  }
+		  section {
+		    margin-left: 25%;
+		  }
+		}
+		@media screen and (max-width:599px) {
+		  nav li {
+		    display: inline;
+		  }
+		}
+
+	</style>
+</head>
+<body>
+<div class="main">
+	<li>主机</li>
+	<li>资源管理</li>
+	<li>资源报表</li>
+	<li>系统配置</li>
+</div>
+<div class="main">
+	<li>主机2</li>
+	<li>资源管理2</li>
+	<li>资源报表2</li>
+	<li>系统配置2</li>
+</div>
+<div class="simple">
+	simple
+</div>
+<div class="fancy">
+	fancy
+</div>
+<div class="static">
+	static 是默认值。任意 position: static; 的元素不会被特殊的定位。一个 static 元素表示它不会被“positioned”，一个 position 属性被设置为其他值的元素表示它会被“positioned”。
+</div>
+<div class="relative1">
+	relative 表现的和 static 一样，除非你添加了一些额外的属性。
+</div>
+<div class="relative2">
+	relative2
+</div>
+<div class="fix">
+	一个固定定位（position属性的值为fixed）元素会相对于视窗来定位，这意味着即便页面滚动，它还是会停留在相同的位置。和 relative 一样， top 、 right 、 bottom 和 left 属性都可用
+</div>
+<div class="relative">
+relative
+	<div class="absolute">
+	absolute
+	</div>
+</div>
+
+
+
+<div class="container">
+	<nav>
+		<li>仪表盘</li>
+		<li>服务器</li>
+		<li>存储</li>
+		<li>网络</li>
+	</nav>
+	<section class="section">
+		section 的 margin-left 样式确保了有足够的空间容纳 nav 元素。
+	</section>
+	<section class="section">
+		section 的 margin-left 样式确保了有足够的空间容纳 nav 元素。
+	</section>
+
+	
+	<section class="section">
+		<img src="http://zh.learnlayout.com/images/ilta.png">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+	</section>
+
+	<div class="box">
+		<img src="http://zh.learnlayout.com/images/ilta.png">
+	</div>
+	<section class="">
+		fafafafafafafaafa
+	</section>
+
+	<footer class="footer">
+		footer
+	</footer>
+</div>
+
+</body>
+</html>

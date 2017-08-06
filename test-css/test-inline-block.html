@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>inline-block测试</title>
+	<style type="text/css">
+		.box {
+		  float: left;
+		  width: 200px;
+		  height: 100px;
+		  margin: 1em;
+		  border:solid;
+		  border-color: green;
+		}
+		.after-box {
+		  clear: left;
+		}
+		.box2 {
+		  display: inline-block;
+		  width: 200px;
+		  height: 100px;
+		  margin: 1em;
+		  border:solid;
+		  border-color: green;
+		}
+		nav {
+		  display: inline-block;
+		  vertical-align: top;
+		  width: 25%;
+		}
+		.column {
+		  display: inline-block;
+		  vertical-align: top;
+		  width: 75%;
+		}
+		.three-column {
+		  padding: 1em;
+		  -moz-column-count: 3;
+		  -moz-column-gap: 1em;
+		  -webkit-column-count: 3;
+		  -webkit-column-gap: 1em;
+		  column-count: 3;
+		  column-gap: 1em;
+		}
+	</style>
+</head>
+<body>
+<div class="box">我在浮动1</div>
+<div class="box">我在浮动2</div>
+<div class="box">我在浮动3</div>
+<div class="box">我在浮动4</div>
+<div class="box">我在浮动2</div>
+<div class="box">我在浮动3</div>
+<div class="box">我在浮动4</div>
+<div class="box">我在浮动2</div>
+<div class="box">我在浮动3</div>
+<div class="box">我在浮动4</div>
+
+<div class="box2">行业元素</div>
+<div class="box2">行业元素</div>
+<div class="box2">行业元素</div>
+<div class="box2">行业元素</div>
+<div class="box2">行业元素</div>
+<div class="box2">行业元素</div>
+<div class="box2">行业元素</div>
+<div class="box2">行业元素</div>
+<div class="box2">行业元素</div>
+
+<div>
+	<nav>
+		<li>
+	        <div>
+	            <h4>This is awesome</h4>
+	            <img src="http://farm4.static.flickr.com/3623/3279671785_d1f2e665b6_s.jpg"
+	            alt="lobster" width="75" height="75"/>
+	        </div>
+		</li>
+	</nav>
+	<div class="column">
+		<section>
+		afafafafafafa
+		</section>
+	</div>
+</div>
+
+<div class="three-column">
+	afafafafafa
+	fafafafafa
+	fafafafafa
+</div>
+
+
+
+
+</body>
+</html>
