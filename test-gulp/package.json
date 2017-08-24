@@ -1,0 +1,16 @@
+{
+  "name": "test-gulp",
+  "version": "1.0.0",
+  "description": "测试gulp-rev-append",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-html-replace": "^1.6.2",
+    "gulp-rev-append": "^0.1.8",
+    "gulp-string-replace": "^0.4.0"
+  }
+}
