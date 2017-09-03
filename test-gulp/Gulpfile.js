@@ -15,9 +15,12 @@ gulp.task('myreplace', function() {
 gulp.task('testRev', function () {
     gulp.src('views/index.html')
         .pipe(rev())
-        .pipe(strReplace('../js', '/js'))
+        .pipe(strReplace(new RegExp('\.\.\/js$', 'g'), '/js'))
+        //.pipe(strReplace('../js', '/js'))
         .pipe(gulp.dest('views/dist'));
 });
 gulp.task('default', function() {
-    gulp.start('myreplace');
+    gulp.start('testRev');
 });
+
+ 

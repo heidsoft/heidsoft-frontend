@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试算法</title>
+</head>
+<body>
+测试数组算法
+</body>
+<script type="text/javascript">
+
+    //如果数据中有相同的元素，则输出
+    function getArraySamleValue() {
+        var arr = [9, 9, 111, 2, 3, 4, 4, 5, 7];
+        var sorted_arr = arr.slice().sort(); // You can define the comparing function here.
+                                             // JS by default uses a crappy string compare.
+                                             // (we use slice to clone the array so the
+                                             // original array won't be modified)
+        console.log(sorted_arr);
+        var results = [];
+        for (var i = 0; i < arr.length - 1; i++) {
+            console.log("sorted_arr[i + 1] ==>"+sorted_arr[i + 1])
+            console.log("sorted_arr[i]     ==>"+sorted_arr[i])
+            if (sorted_arr[i + 1] == sorted_arr[i]) {
+                results.push(sorted_arr[i]);
+            }
+        }
+
+        console.log(results);
+    }
+
+    console.info("start========================getArraySamleValue=========================test")
+    getArraySamleValue();
+    console.info("end========================getArraySamleValue===========================stest")
+
+    //输出数组中的相同元素
+    function eliminateDuplicates(arr) {
+        var i,
+            len=arr.length,
+            out=[],
+            obj={};
+
+        for (i=0;i<len;i++) {
+            obj[arr[i]]=0;
+        }
+        console.log(obj);
+        for (i in obj) {
+            out.push(i);
+        }
+        console.log(out);
+        return out;
+    }
+
+    console.info("end========================eliminateDuplicates===========================stest")
+    eliminateDuplicates([9, 9, 111, 2, 3, 4, 4, 5, 7])
+    console.info("end========================eliminateDuplicates===========================stest")
+
+
+
+
+    function test() {
+        var names = ['Mike', 'Matt', 'Nancy', 'Adam', 'Jenny', 'Nancy', 'Carl']
+
+        var uniq = names
+            .map((name) => {
+                return {count: 1, name: name}
+            })
+            .reduce((a, b) => {
+                a[b.name] = (a[b.name] || 0) + b.count
+                return a
+            }, {})
+
+        var duplicates = Object.keys(uniq).filter((a) => uniq[a] > 1)
+
+        console.log(duplicates) // [ 'Nancy' ]
+    }
+
+    test();
+
+    function find_duplicates(arr) {
+        var len=arr.length,
+            out=[],
+            counts={};
+
+        for (var i=0;i<len;i++) {
+            var item = arr[i];
+            console.log("counts[item] 计算前===>"+counts[item]);
+            counts[item] = counts[item] >= 1 ? counts[item] + 1 : 1;
+            console.log("counts[item] 计算后===>"+counts[item]);
+            //如果出现两次
+            if (counts[item] === 2) {
+                out.push(item);
+            }
+        }
+
+        return out;
+    }
+
+    var value = find_duplicates(['one',2,3,4,4,4,5,6,7,7,7,'pig','one']);
+    console.log(value);
+
+    function find_duplicates2(data) {
+
+        var track = {};
+        var duplicates = [];
+
+        data.forEach(function (item) {
+            console.log("!track[item] ===>"+!track[item]);
+            !track[item] ? track[item] = true : duplicates.push(item);
+        });
+
+        return duplicates;
+    }
+
+    var value2 = find_duplicates2(['one',2,3,4,4,4,5,6,7,7,7,'pig','one']);
+    console.log(value2);
+
+    var transformers = [
+        {
+            name: 'Optimus Prime',
+            form: 'Freightliner Truck',
+            team: 'Autobot'
+        },
+        {
+            name: 'Megatron',
+            form: 'Gun',
+            team: 'Decepticon'
+        },
+        {
+            name: 'Bumblebee',
+            form: 'VW Beetle',
+            team: 'Autobot'
+        },
+        {
+            name: 'Soundwave',
+            form: 'Walkman',
+            team: 'Decepticon'
+        }
+    ];
+
+    console.log( transformers.map(function (item) {
+       return item.name;
+    }))
+
+    //箭头函数
+    var robotsInDisguise = transformers.map(transformer => transformer.form);
+    console.log(robotsInDisguise);
+
+    function isAutobot(transformer) {
+        return transformer.team === 'Autobot';
+    }
+    var isAutobotArray = transformers.filter(isAutobot);
+    console.log(isAutobotArray);
+
+
+    var constructicons = [
+        {
+            name: 'Scrapper',
+            form: 'Freightliner Truck',
+            team: 'Decepticon',
+            bodyPart: 'rightLeg'
+        },
+        {
+            name: 'Hook',
+            form: 'Mobile Crane',
+            team: 'Decepticon',
+            bodyPart: 'upperTorso'
+        },
+        {
+            name: 'Bonecrusher',
+            form: 'Bulldozer',
+            team: 'Decepticon',
+            bodyPart: 'leftArm'
+        },
+        {
+            name: 'Scavenger',
+            form: 'Excavator',
+            team: 'Decepticon',
+            bodyPart: 'rightArm'
+        },
+        {
+            name: 'Mixmaster',
+            form: 'Concrete Mixer',
+            team: 'Decepticon',
+            bodyPart: 'leftLeg'
+        },
+        {
+            name: 'Long Haul',
+            form: 'Dump Truck',
+            team: 'Decepticon',
+            bodyPart: 'lowerTorso'
+        }
+    ];
+
+    function assemble(combiner, transformer) {
+        // On each iteration, add the current transformer to the form object of the combiner.
+        combiner.form[transformer.bodyPart] = transformer.name;
+        return combiner;
+    }
+
+    var devastator = constructicons.reduce(assemble, {
+        name: 'Devastator',
+        team: 'Decepticon',
+        form: {}
+    });
+
+    console.log(devastator);
+
+
+    var arr = [1, 2, 3, 4, 5, 6];
+    delete arr[2];
+    console.log(arr);   // [1, 2, undefined, 4, 5, 6]
+
+    arr.reduce(function(pre,cur){
+        console.log("pre==>"+pre);
+        console.log("cur==>"+cur);
+        return String(pre) + String(cur)
+    });  // "12456"
+
+    var total = [0, 1, 2, 3, 4].reduce(function(a, b) { return a + b });     // 10
+    console.log("total===>"+total);
+
+    var total2 = [0, 1, 2, 3, 4].reduce(function(a, b) { return a + b },10);     // 10
+    console.log("total2===>"+total2);
+
+</script>
+</html>
