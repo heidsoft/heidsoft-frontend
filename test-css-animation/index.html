@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 动画</title>
+    <style>
+        .parent {
+            background-color: hsl(200, 100%, 20%);
+            height: 400px;
+            width: 400px;
+        }
+        .child {
+            background-color: red;
+            height: 50%;
+            width: 50%;
+            /* transition: transform 1s linear; */
+            /* transition: transform 1s ease-in-out; */
+            /* transition: transform 1s ease-in; */
+            animation: left-to-right 1s ease-in forwards infinite alternate;
+
+        }
+        /*
+        这段CSS代码的意思是：当鼠标悬停在拥有`.parent`类的父元素上时，
+        其子元素`.child`将会沿X轴方向向右平移100%的距离。
+        也就是说，当鼠标悬停在父元素上时，子元素将会从原来的位置向右移动一个元素的宽度的距离。
+        这通常用于创建交互式效果，例如当鼠标移动到一个元素上时，它的子元素会随之移动。
+        */
+        .parent:hover .child{
+            /* background-color: green;
+            transform: translateX(100%); 
+            其中animation-play-state: paused;指定了动画的播放状态为暂停。
+            注释部分的代码表示当选中该元素时，其背景颜色会变为绿色，
+            并向右移动100%的距离。
+            */
+            animation-play-state: paused;
+        }
+        @keyframes left-to-right {
+            0%{
+                background-color: red;
+                transform: translateX(0)
+            }
+
+            33%{
+                background-color: yellow;
+                transform: translateY(100%);
+            }
+
+            66%{
+                background-color: blue;
+                transform: translateX(100%) translateY(100%) ;
+            }
+
+
+            100%{
+                background-color: green;
+                transform: translateX(100%);
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="child">
+
+    </div>
+</div>
+</body>
+</html>
