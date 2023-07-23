@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站layout</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        /*
+        视口单位
+        https://juejin.cn/post/6844903494386712589
+        https://caniuse.com/?search=vh
+        */
+        .container {
+            width: 100vw;
+            height: 100vh;
+
+            font-family:'Quicksand', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 50px 1fr 1fr 100px;
+
+            
+            gap: 10px;
+            padding: 10px;
+            /*
+            https://www.runoob.com/try/try.php?filename=trycss3_box-sizing
+            诉浏览器：你想要设置的边框和内边距的值是包含在 width 内的。
+            也就是说，如果你将一个元素的 width 设为 100px，
+            那么这 100px 会包含它的 border 和 padding，
+            内容区的实际宽度是 width 减 去(border + padding) 的值。
+            大多数情况下，这使得我们更容易地设定一个元素的宽高。
+            注：border-box 不包含 margin。 
+            */
+            box-sizing: border-box;
+           
+        }
+
+        .container div {
+            /*
+            当元素的 padding（填充）内边距被清除时，
+            所释放的区域将会受到元素背景颜色的填充。
+            单独使用 padding 属性可以改变上下左右的填充*/
+            padding: 10px;
+            /*CSS中的'solid'是一种边框样式，用于定义HTML元素的边框外观。
+            它是CSS的预定义值之一，表示边框是实线，具有均匀的宽度和颜色。
+            当您在CSS中将元素的边框样式设置为'solid'时，该元素的边框将被呈现为一个完整的实线，
+            边框线的颜色和宽度由相应的CSS属性（如border-color和border-width）定义。*/
+            border: 1px solid #000000;
+        }
+
+        .header {
+            margin: 0;
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        .content-large {
+            grid-row-start: 2;
+            /*
+            grid-row-end 属性规定项目将横跨多少行，或者项目将在在哪条行线上结束。
+            规定项目将横跨的行数。
+            */
+            grid-row-end: span 2;
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+        }
+        
+        .footer {
+            grid-column: 1/span 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="content-large">Content #1</div>
+        <div class="content-small">Content #2</div>
+        <div class="content-small">Content #3</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
