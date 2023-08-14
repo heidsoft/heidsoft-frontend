@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记数器</title>
+    <style type="text/css">
+        body{
+            /* 声明计数器, 为段落自动添加序号 */
+            counter-reset: paracount;
+        }
+        p::before{
+            content: counter(paracount);
+            counter-increment: paracount;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Blink内核诞生于2013年4月，属于年轻的内核，至今才五年多的时间。目前采用其内核的主流浏览器有Chrome(v28+)、Opera(v15+)、Vivaldi、AmazonSilk等。Blink内核是WebKit内核中的WebCore组件的一个分支，即在WebCore的基础上进行二次开发的，增加了一些新的功能和特色。
+        WebKit内核由WebCore和JavaScriptCore组成，其中WebCore是在KHTML的基础上演变而来，JavaScriptCore是fork自KJS，而KHTML和KJS都是由大名鼎鼎的KDE社区开发。
+    </p>
+    <p>
+        KDE（K DesktopEnvironmnet）是一个全球最大的自由软件开发社区，主要用来开发自由和开源软件。由MatthiasEttrich于1996年创办,其知名的产品有Plasma桌面系统、KDE Framework以及众多运行在类Unix、微软Windows和Android的跨平台程序。其代码主要托管在github上，地址为https://github.com/KDE。KDE出品的大部分软件都是用C++开发的，对桌面软件的贡献非常大，尤其是浏览器内核。现在被大家广泛熟知的WebKit内核的核心组件就是基于KDE的KHTML和KJS组件演化而来。
+    </p>
+</body>
+</html>
