@@ -33,7 +33,7 @@
         }
 
 
-        div {
+        .item {
             color: #4F46E5;
             padding: 0px;
             width: 100px;
@@ -43,15 +43,21 @@
             align-items: center;
             font-size: 1.5rem;
         }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <div>首页</div>
-        <div>人工智能</div>
-        <div>云计算</div>
-        <div>云原生</div>
+        <div class="item">首页</div>
+        <div class="item">人工智能</div>
+        <div class="item">云计算</div>
+        <div class="item">云原生</div>
     </header>
 
     <main>
@@ -61,6 +67,9 @@
         </article>
     </main>
 
+    <footer>
+        <p>版权所有</p>
+    </footer>
 </body>
 
 </html>
