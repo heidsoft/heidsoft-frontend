@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            /* flex-direction 属性定义了 flex 元素如何分配空间。
+            默认情况下，元素是水平排列的，即从左到右。column，从上往下 */
+            flex-direction: column;
+            /* flex-wrap 属性指定 flex 
+            元素单行显示还是多行显示。如果允许换行，这个属性允许你控制行的堆叠方向。 */
+            flex-wrap: wrap;
+            /* 均匀排列每个元素首个元素放置于起点，末尾元素放置于终点 */
+            justify-content: space-between;
+            /* align-items 属性设置了所有直接子元素的 align-self 值作为一个组*/
+            align-items: flex-start;
+            align-content: space-between;
+            height: auto;
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .highlight {
+            /* background-color: aliceblue; */
+            color: #007BFF;
+            /* 字体的粗细程度 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section>
+            <h1>数字化转型：引领未来，创造无限可能</h1>
+            <p>在这个快速变化的时代，数字化转型已成为企业发展的必然趋势。我们致力于通过先进的数字技术，帮助企业实现业务流程的优化、客户体验的提升以及新业务模式的探索。</p>
+            <h2>我们的服务</h2>
+            <ul>
+                <li><span class="highlight">云计算解决方案</span>：提供灵活、可扩展的计算资源，助力企业轻松应对业务增长。</li>
+                <li><span class="highlight">大数据与分析</span>：从海量数据中挖掘价值，为企业决策提供科学依据。</li>
+                <li><span class="highlight">人工智能与机器学习</span>：自动化业务流程，提高效率和准确性。</li>
+                <li><span class="highlight">物联网（IoT）</span>：连接设备和传感器，实现远程监控和智能管理。</li>
+                <li><span class="highlight">移动应用开发</span>：打造便捷的移动应用，提升用户体验和客户满意度。</li>
+                <li><span class="highlight">区块链技术</span>：保障数据的安全性和透明度，构建信任生态。</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+
+</html>
