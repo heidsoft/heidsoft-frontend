@@ -7,34 +7,42 @@
     <title>flexbox_header</title>
 
     <style>
+        :root {
+            --THEME_COLOR: #d33a2c;
+            /* 将主题颜色变量定义为蓝色调 */
+        }
+
         body {
             margin: 0px;
-            /* background-color: #f9f9f9;*/
+            font-family: "proxima-nova", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+            font-size: 1.1rem;
+            /*line-height CSS 属性用于设置多行元素的空间量，如多行文本的间距。对于块级元素，它指定元素行盒（line boxes）的最小高度*/
+            line-height: 1.6;
+            color: #100;
+            background: #f6f5de;
         }
 
         header {
             display: flex;
             flex-direction: row;
-            background: white;
+            background: var(--THEME_COLOR, #d33a2c);
             /* 内容均匀分布 */
             justify-content: space-around;
             /* align-items 属性设置了所有直接子元素的 align-self 值作为一个组*/
             align-items: center;
-            gap: 5px;
-            margin-left: 20px;
-            margin-right: 20px;
             height: 60px;
+            min-height: 60px;
             /* 设置固定高度 */
             padding: 10px 0;
             /* 增加内边距 */
-            box-shadow: 0 2px 4px rgba(47, 229, 41, 0.9);
+            box-shadow: 0 2px 4px #d3a7a7e6;
             /* box-shadow 属性用于在元素的框架上添加阴影效果。你可以在同一个元素上设置多个阴影效果，并用逗号将他们分隔开。该属性可设置的值包括阴影的 X 轴偏移量、Y 轴偏移量、模糊半径、扩散半径和颜色。 */
 
         }
 
 
         .item {
-            color: #4F46E5;
+            color: #fff;
             padding: 0px;
             width: 100px;
             height: 25px;
@@ -54,9 +62,9 @@
         footer {
             display: flex;
             flex-direction: row;
-            justify-self: center;
-            min-height: 100px;
-            height: 100px;
+            justify-content: center;
+            min-height: 50px;
+            height: 50px;
         }
     </style>
 </head>
