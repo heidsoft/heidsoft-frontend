@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox_header</title>
+
+    <style>
+        body {
+            margin: 0px;
+            /* background-color: #f9f9f9;*/
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+            background: white;
+            /* 内容均匀分布 */
+            justify-content: space-around;
+            /* align-items 属性设置了所有直接子元素的 align-self 值作为一个组*/
+            align-items: center;
+            gap: 5px;
+            margin-left: 20px;
+            margin-right: 20px;
+            height: 60px;
+            /* 设置固定高度 */
+            padding: 10px 0;
+            /* 增加内边距 */
+            box-shadow: 0 2px 4px rgba(47, 229, 41, 0.9);
+            /* box-shadow 属性用于在元素的框架上添加阴影效果。你可以在同一个元素上设置多个阴影效果，并用逗号将他们分隔开。该属性可设置的值包括阴影的 X 轴偏移量、Y 轴偏移量、模糊半径、扩散半径和颜色。 */
+
+        }
+
+
+        div {
+            color: #4F46E5;
+            padding: 0px;
+            width: 100px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>首页</div>
+        <div>人工智能</div>
+        <div>云计算</div>
+        <div>云原生</div>
+    </header>
+
+    <main>
+        <article>
+            <h1>标题</h1>
+            <p>文章内容</p>
+        </article>
+    </main>
+
+</body>
+
+</html>
