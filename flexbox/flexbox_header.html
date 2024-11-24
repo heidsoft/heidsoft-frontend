@@ -66,6 +66,28 @@
             min-height: 50px;
             height: 50px;
         }
+
+        @media (max-width: 768px) {
+            .floating-reminder {
+                right: 10px;
+                width: 90%;
+                /* 调整宽度为90% */
+            }
+        }
+
+        /*绝对定位*/
+        .floating-reminder {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            /* 可以根据需要调整垂直位置，这里是垂直居中 */
+            transform: translateY(-50%);
+            /* 配合top: 50%实现真正的垂直居中 */
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
@@ -78,10 +100,20 @@
     </header>
 
     <main>
-        <article>
-            <h1>标题</h1>
-            <p>文章内容</p>
-        </article>
+        <div>
+            <article>
+                <h1>标题</h1>
+                <p>文章内容</p>
+            </article>
+            <aside>
+                <h2>侧边栏</h2>
+                <p>侧边栏内容</p>
+            </aside>
+        </div>
+        <div class="floating-reminder">
+            这是一个浮动提醒内容
+            <button onclick="this.parentElement.style.display='none';">关闭</button>
+        </div>
     </main>
 
     <footer>
