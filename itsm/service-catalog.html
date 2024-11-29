@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .content {
+            padding: 20px;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .service-card button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .service-card button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Service Catalog</h1>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>New Hardware Request</h3>
+                <button>Request</button>
+            </div>
+            <div class="service-card">
+                <h3>Software Installation</h3>
+                <button>Request</button>
+            </div>
+            <div class="service-card">
+                <h3>Network Access</h3>
+                <button>Request</button>
+            </div>
+            <div class="service-card">
+                <h3>Email Setup</h3>
+                <button>Request</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

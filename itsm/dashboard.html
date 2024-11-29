@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字化 ITSM & ITOM 系统</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #2a2d34;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px 0;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #575a63;
+        }
+
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+
+        .module-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .module-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>数字化系统</h2>
+        <a href="#service-catalog">服务目录</a>
+        <a href="#incident-management">工单管理</a>
+        <a href="#problem-management">问题管理</a>
+        <a href="#change-management">变更管理</a>
+        <a href="#event-management">事件管理</a>
+        <a href="#cmdb">配置管理数据库</a>
+        <a href="#auto-repair">自动化修复</a>
+    </div>
+    <div class="content">
+        <h1>数字化 ITSM & ITOM 系统</h1>
+
+        <!-- 服务目录 -->
+        <div class="module-card" id="service-catalog">
+            <h3>服务目录</h3>
+            <p>用户自助申请 IT 服务（如云主机、账号权限等）。支持多级审批流程。</p>
+            <a href="#" class="button">申请服务</a>
+        </div>
+
+        <!-- 工单管理 -->
+        <div class="module-card" id="incident-management">
+            <h3>工单管理</h3>
+            <p>支持工单的创建、分配、跟踪、解决及归档的全流程管理，智能调整优先级。</p>
+            <a href="#" class="button">管理工单</a>
+        </div>
+
+        <!-- 问题管理 -->
+        <div class="module-card" id="problem-management">
+            <h3>问题管理</h3>
+            <p>记录重大问题的根因分析，生成报告以避免问题重复发生。</p>
+            <a href="#" class="button">查看问题</a>
+        </div>
+
+        <!-- 变更管理 -->
+        <div class="module-card" id="change-management">
+            <h3>变更管理</h3>
+            <p>提供变更计划审批、风险评估、变更执行及后续影响评估功能。</p>
+            <a href="#" class="button">查看变更</a>
+        </div>
+
+        <!-- 事件管理 -->
+        <div class="module-card" id="event-management">
+            <h3>事件管理</h3>
+            <p>集成监控工具，实现自动事件捕获，并自动生成关联工单。</p>
+            <a href="#" class="button">查看事件</a>
+        </div>
+
+        <!-- 配置管理数据库 -->
+        <div class="module-card" id="cmdb">
+            <h3>配置管理数据库（CMDB）</h3>
+            <p>记录所有 IT 资源及其关联关系，支持云原生资源的动态更新。</p>
+            <a href="#" class="button">管理资源</a>
+        </div>
+
+        <!-- 自动化修复 -->
+        <div class="module-card" id="auto-repair">
+            <h3>自动化修复</h3>
+            <p>集成脚本库，快速修复常见问题，提升运维效率。</p>
+            <a href="#" class="button">执行修复</a>
+        </div>
+    </div>
+</body>
+
+</html>
