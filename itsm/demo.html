@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字化转型平台管理系统</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+        }
+
+        header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav {
+            width: 240px;
+            background-color: #ffffff;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 15px 20px;
+            display: block;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            background-color: #f4f4f4;
+        }
+
+        main {
+            margin-left: 240px;
+            padding: 20px;
+        }
+
+        .module-card {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .module-card h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .module-card p {
+            margin: 10px 0 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .module-card button {
+            padding: 10px 20px;
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .module-card button:hover {
+            background-color: #334296;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>数字化转型平台管理系统</h1>
+        <span>欢迎, 用户</span>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#itsm">ITSM（IT服务管理）</a></li>
+            <li><a href="#itom">ITOM（IT运营管理）</a></li>
+            <li><a href="#devops">DevOps</a></li>
+            <li><a href="#finops">FinOps</a></li>
+            <li><a href="#asset-management">资产管理</a></li>
+            <li><a href="#app-management">应用管理</a></li>
+            <li><a href="#ticket-system">工单系统</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- ITSM Module -->
+        <section id="itsm">
+            <div class="module-card">
+                <div>
+                    <h2>ITSM（IT服务管理）</h2>
+                    <p>管理服务请求、变更管理、配置管理、工单流程。</p>
+                </div>
+                <button>进入模块</button>
+            </div>
+        </section>
+
+        <!-- ITOM Module -->
+        <section id="itom">
+            <div class="module-card">
+                <div>
+                    <h2>ITOM（IT运营管理）</h2>
+                    <p>自动化事件监控、容量管理和事件根因分析。</p>
+                </div>
+                <button>进入模块</button>
+            </div>
+        </section>
+
+        <!-- DevOps Module -->
+        <section id="devops">
+            <div class="module-card">
+                <div>
+                    <h2>DevOps</h2>
+                    <p>支持CI/CD流水线、代码部署、容器管理和版本控制。</p>
+                </div>
+                <button>进入模块</button>
+            </div>
+        </section>
+
+        <!-- FinOps Module -->
+        <section id="finops">
+            <div class="module-card">
+                <div>
+                    <h2>FinOps</h2>
+                    <p>成本优化分析、多云预算管理、实时账单监控。</p>
+                </div>
+                <button>进入模块</button>
+            </div>
+        </section>
+
+        <!-- Asset Management Module -->
+        <section id="asset-management">
+            <div class="module-card">
+                <div>
+                    <h2>资产管理</h2>
+                    <p>资产生命周期管理、配置项关系图和采购流程。</p>
+                </div>
+                <button>进入模块</button>
+            </div>
+        </section>
+
+        <!-- App Management Module -->
+        <section id="app-management">
+            <div class="module-card">
+                <div>
+                    <h2>应用管理</h2>
+                    <p>支持应用部署、监控和权限管理。</p>
+                </div>
+                <button>进入模块</button>
+            </div>
+        </section>
+
+        <!-- Ticket System Module -->
+        <section id="ticket-system">
+            <div class="module-card">
+                <div>
+                    <h2>工单系统</h2>
+                    <p>支持用户提交工单、问题分配和进度跟踪。</p>
+                </div>
+                <button>进入模块</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
