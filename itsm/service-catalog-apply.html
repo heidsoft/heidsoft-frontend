@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理系统原型</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #2C3E50;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            /* 允许换行 */
+            gap: 10px;
+            align-items: center;
+        }
+
+        .header .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .header .nav a:hover {
+            background-color: #1ABC9C;
+        }
+
+        .container {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+
+        .sidebar {
+            background-color: #34495E;
+            width: 200px;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #1ABC9C;
+        }
+
+        .content {
+            flex: 1;
+            background-color: #ECF0F1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .content h2 {
+            margin-top: 0;
+        }
+
+        .content .list-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .content .list-item .details-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #3498DB;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .content .list-item .details-btn:hover {
+            background-color: #2980B9;
+        }
+    </style>
+    <script>
+        // 模块配置
+        const modules = {
+            "服务目录": ["项目申请", "应用申请", "代码仓库申请"],
+            "工单管理": ["工单列表", "工单统计"],
+            "问题管理": ["问题列表", "问题分类"],
+            "变更管理": ["变更申请", "变更记录"],
+            "事件管理": ["事件列表", "事件分析"],
+            "DevOps": ["持续集成", "持续交付", "自动化运维"],
+            "FinOps": ["成本分析", "预算管理", "成本优化"],
+        };
+
+        // 动态加载横向导航
+        function loadHeader() {
+            const nav = document.querySelector('.header .nav');
+            nav.innerHTML = '';
+            for (const moduleName in modules) {
+                const link = document.createElement('a');
+                link.href = '#';
+                link.textContent = moduleName;
+                link.onclick = () => loadModule(moduleName);
+                nav.appendChild(link);
+            }
+        }
+
+        // 加载模块
+        function loadModule(module) {
+            const sidebar = document.querySelector('.sidebar');
+            const content = document.querySelector('.content');
+
+            // 清空左侧导航和右侧内容
+            sidebar.innerHTML = '';
+            content.innerHTML = '';
+
+            // 加载子模块到左侧导航
+            const subModules = modules[module];
+            if (subModules) {
+                sidebar.innerHTML = `<h3>${module}</h3>`;
+                subModules.forEach(subModule => {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.textContent = subModule;
+                    link.onclick = () => loadContent(subModule);
+                    sidebar.appendChild(link);
+                });
+                loadContent(subModules[0]); // 默认加载第一个子模块内容
+            }
+        }
+
+        // 加载具体内容到右侧
+        function loadContent(contentName) {
+            const content = document.querySelector('.content');
+            content.innerHTML = `
+        <h2>${contentName}</h2>
+        <div class="list-item">
+          <h4>${contentName} 示例项 1</h4>
+          <p>这是一个关于 ${contentName} 的描述信息。</p>
+          <a href="#" class="details-btn">查看详情</a>
+        </div>
+        <div class="list-item">
+          <h4>${contentName} 示例项 2</h4>
+          <p>这是另一个关于 ${contentName} 的描述信息。</p>
+          <a href="#" class="details-btn">查看详情</a>
+        </div>
+      `;
+        }
+
+        // 页面初始化
+        window.onload = () => {
+            loadHeader(); // 加载横向导航
+            loadModule("服务目录"); // 默认加载第一个模块
+        };
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>管理系统</h1>
+        <div class="nav"></div> <!-- 动态渲染横向导航 -->
+    </div>
+    <div class="container">
+        <div class="sidebar"></div> <!-- 左侧导航 -->
+        <div class="content"></div> <!-- 右侧内容 -->
+    </div>
+</body>
+
+</html>

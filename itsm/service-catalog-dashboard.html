@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平台管理系统</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        /* 顶部导航 */
+        .header {
+            background-color: #2C3E50;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .header .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header .nav>div {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .header .nav>div>a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            display: inline-block;
+        }
+
+        .header .nav>div:hover>a {
+            background-color: #1ABC9C;
+        }
+
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .mega-menu.active {
+            display: block;
+        }
+
+        .mega-menu h4 {
+            margin: 0;
+            font-size: 16px;
+            color: #2C3E50;
+            padding: 5px 0;
+        }
+
+        .mega-menu a {
+            text-decoration: none;
+            color: #2C3E50;
+            display: block;
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .mega-menu a:hover {
+            background-color: #1ABC9C;
+            color: white;
+        }
+
+        /* 页面结构 */
+        .layout {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #ECF0F1;
+            padding: 10px;
+            border-right: 1px solid #dcdcdc;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #2C3E50;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #1ABC9C;
+            color: white;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .content h2 {
+            margin: 0 0 10px;
+        }
+    </style>
+    <script>
+        // 主模块与子模块配置
+        const modules = {
+            "ITSM": ["服务目录", "工单管理", "问题管理", "变更管理"],
+            "ITOM": ["事件管理", "CMDB", "自动化修复"],
+            "DevOps": ["持续集成", "持续交付", "自动化运维"],
+            "FinOps": ["成本分析", "预算管理", "成本优化"],
+            "应用管理": ["项目申请", "应用申请", "代码仓库申请"],
+            "资产管理": ["硬件资产", "软件资产", "云资源"],
+        };
+
+        // 动态生成顶部导航
+        function loadMegaMenu() {
+            const nav = document.querySelector('.header .nav');
+            nav.innerHTML = '';
+            for (const moduleName in modules) {
+                const moduleDiv = document.createElement('div');
+                const link = document.createElement('a');
+                link.textContent = moduleName;
+
+                const menu = document.createElement('div');
+                menu.className = 'mega-menu';
+
+                modules[moduleName].forEach(subModule => {
+                    const subLink = document.createElement('a');
+                    subLink.href = '#';
+                    subLink.textContent = subModule;
+                    subLink.onclick = () => loadSidebar(moduleName, subModule);
+                    menu.appendChild(subLink);
+                });
+
+                moduleDiv.appendChild(link);
+                moduleDiv.appendChild(menu);
+                moduleDiv.onmouseover = () => menu.classList.add('active');
+                moduleDiv.onmouseout = () => menu.classList.remove('active');
+                nav.appendChild(moduleDiv);
+            }
+        }
+
+        // 动态加载左侧菜单
+        function loadSidebar(moduleName, subModule) {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.innerHTML = `<h3>${moduleName}</h3>`;
+            modules[moduleName].forEach(sub => {
+                const link = document.createElement('a');
+                link.href = '#';
+                link.textContent = sub;
+                link.onclick = () => loadContent(moduleName, sub);
+                sidebar.appendChild(link);
+            });
+            loadContent(moduleName, subModule);
+        }
+
+        // 动态加载内容区域
+        function loadContent(moduleName, subModule) {
+            const content = document.querySelector('.content');
+            content.innerHTML = `
+        <h2>${moduleName} - ${subModule}</h2>
+        <p>这里是关于<strong>${subModule}</strong> 的内容展示。</p>
+      `;
+        }
+
+        // 页面初始化
+        window.onload = () => {
+            loadMegaMenu();
+            loadSidebar("ITSM", "服务目录");
+        };
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">平台管理系统</div>
+        <div class="nav"></div>
+    </div>
+    <div class="layout">
+        <div class="sidebar">
+            <!-- 左侧菜单动态加载 -->
+        </div>
+        <div class="content">
+            <!-- 内容区动态加载 -->
+        </div>
+    </div>
+</body>
+
+</html>
