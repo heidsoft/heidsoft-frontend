@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业数字化转型解决方案 - CloudMesh</title>
+    <style>
+        :root {
+            --primary-color: #2B5BA9;
+            --secondary-color: #4A90E2;
+            --text-color: #333333;
+            --background-color: #FFFFFF;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            background: var(--background-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .logo {
+            float: left;
+            margin-left: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            float: right;
+            margin-right: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        header {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background: var(--secondary-color);
+        }
+
+        section {
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .service-grid,
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card,
+        .solution-card {
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover,
+        .solution-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+
+        .solution-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .solution-card li {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .solution-card li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .case-slider {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .case {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .case img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .service-grid,
+            .solution-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 6rem 1rem 3rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">CloudMesh</div>
+        <ul>
+            <li><a href="#home">首页</a></li>
+            <li><a href="#solutions">解决方案</a></li>
+            <li><a href="#services">技术服务</a></li>
+            <li><a href="#cases">成功案例</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>全方位数字化转型解决方案</h1>
+        <p>整合ITSM、ITOM、DevOps、云原生等技术，助力企业数字化蜕变</p>
+        <button>开启数字化之旅</button>
+    </header>
+
+    <section id="services">
+        <h2>核心技术服务</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyQjVCQTkiIHN0cm9rZS13aWR0aD0iMiI+PHBhdGggZD0iTTEyIDJ2NiIvPjxwYXRoIGQ9Ik0xNyA1bC0yLjUgMi41Ii8+PHBhdGggZD0iTTIyIDEyaC02Ii8+PC9zdmc+"
+                    alt="云服务">
+                <h3>云计算与云原生</h3>
+                <p>提供云基础设施、容器化和微服务架构解决方案</p>
+            </div>
+            <div class="service-card">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyQjVCQTkiIHN0cm9rZS13aWR0aD0iMiI+PHBhdGggZD0iTTIyIDEyaC00bC0zIDlMOSAzbC0zIDktSDIiLz48L3N2Zz+"
+                    alt="DevOps">
+                <h3>DevOps实践</h3>
+                <p>持续集成/持续部署，自动化运维，敏捷开发</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions">
+        <h2>数字化解决方案</h2>
+        <div class="solution-grid">
+            <div class="solution-card">
+                <h3>IT服务管理(ITSM/ITOM)</h3>
+                <ul>
+                    <li>服务台管理</li>
+                    <li>变更与配置管理</li>
+                    <li>IT运维监控</li>
+                    <li>自动化运维</li>
+                </ul>
+            </div>
+            <div class="solution-card">
+                <h3>数据与流程管理</h3>
+                <ul>
+                    <li>数据资产管理</li>
+                    <li>业务流程优化</li>
+                    <li>数据分析与洞察</li>
+                    <li>应用生命周期管理</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="cases">
+        <h2>成功案例</h2>
+        <div class="case-slider">
+            <div class="case">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjAwIDQwMCIgZmlsbD0iI2YwZjBmMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2YwZjBmMCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM2NjY2NjYiPuaIkOWKn+ahiOS+izwvdGV4dD48L3N2Zz+"
+                    alt="数字化转型案例">
+                <h3>大型制造企业数字化转型</h3>
+                <p>通过DevOps和云原生技术，实现研发效率提升200%，运维成本降低40%</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>联系我们</h2>
+        <form>
+            <input type="text" placeholder="公司名称" required>
+            <input type="text" placeholder="联系人" required>
+            <input type="email" placeholder="电子邮箱" required>
+            <textarea placeholder="请描述您的数字化转型需求" required></textarea>
+            <button type="submit">获取解决方案</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="company-info">
+                <h3>CloudMesh</h3>
+                <p>您的数字化转型战略合作伙伴</p>
+            </div>
+            <div class="contact-info">
+                <p>电话：+86 xxx xxxx xxxx</p>
+                <p>邮箱：contact@cloudmesh.top</p>
+                <p>地址：xxx省xxx市xxx区</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

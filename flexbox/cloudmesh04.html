@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudMesh | 驱动数字化未来</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #0A0F24;
+            color: #E5E7EB;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        p {
+            margin: 0;
+            font-size: 1rem;
+            color: #9CA3AF;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 头部样式 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(10, 15, 36, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            color: #4F46E5;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            margin-right: 100px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: #E5E7EB;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4F46E5;
+        }
+
+        /* 英雄区 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(145deg, #1B2B5C, #141F42);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #A3B4D0;
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+
+        .hero button {
+            padding: 15px 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #FFFFFF;
+            background: linear-gradient(90deg, #4F46E5, #9333EA);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .hero button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(90deg, #9333EA, #4F46E5);
+        }
+
+        /* 服务区 */
+        .services {
+            padding: 100px 50px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background: #141F42;
+        }
+
+        .service {
+            flex: 1;
+            margin: 20px;
+            max-width: 300px;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #1B2540, #2C3E63);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .service h3 {
+            font-size: 1.5rem;
+            color: #4F46E5;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            font-size: 1rem;
+            color: #d1d5db;
+        }
+
+        /* 技术特性区 */
+        .features {
+            padding: 80px 50px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background: #1B2540;
+        }
+
+        .feature {
+            flex: 1;
+            margin: 20px;
+            max-width: 250px;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #2C3E63, #1B2540);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            color: #4F46E5;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: #d1d5db;
+        }
+
+        /* 联系我们区 */
+        .contact {
+            padding: 80px 50px;
+            background: #0A0F24;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            color: #FFFFFF;
+            margin-bottom: 30px;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            color: #9CA3AF;
+            margin-bottom: 20px;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact input,
+        .contact textarea,
+        .contact button {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #4F46E5;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .contact button {
+            background: linear-gradient(90deg, #4F46E5, #9333EA);
+            color: #FFFFFF;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .contact button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(90deg, #9333EA, #4F46E5);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin-left: 20px;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                max-width: 300px;
+                margin: 10px 0;
+            }
+        }
+
+        /* 页脚 */
+        footer {
+            padding: 20px;
+            text-align: center;
+            background: #0A0F24;
+            font-size: 0.9rem;
+            color: #9CA3AF;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">CloudMesh</div>
+        <nav>
+            <a href="#about">关于我们</a>
+            <a href="#services">服务</a>
+            <a href="#features">核心功能</a>
+            <a href="#contact">联系我们</a>
+            <a href="blog.html">博客</a>
+            <a href="itsm/service-catalog-dashboard.html">ITSM</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>CloudMesh：推动数字化转型，助力企业创新</h1>
+        <p>为企业提供专业的技术咨询、云服务架构与自动化运维，打造高效创新的数字化未来。</p>
+        <button>了解更多</button>
+    </section>
+
+    <section class="services" id="services">
+        <div class="service">
+            <h3>云资源管理</h3>
+            <p>高效管理跨云平台的资源，优化企业云计算的资源利用率。</p>
+        </div>
+        <div class="service">
+            <h3>自动化运维</h3>
+            <p>通过自动化工具提升运维效率，减少人为干预，保障系统稳定。</p>
+        </div>
+        <div class="service">
+            <h3>FinOps与云成本优化</h3>
+            <p>通过精确的成本监控与优化策略，实现云资源的成本控制与透明化。</p>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="feature">
+            <h3>AI赋能</h3>
+            <p>将人工智能与云平台结合，提升业务自动化与数据洞察能力。</p>
+        </div>
+        <div class="feature">
+            <h3>多云服务支持</h3>
+            <p>支持主流云平台的无缝集成，助力企业构建灵活的多云架构。</p>
+        </div>
+        <div class="feature">
+            <h3>安全保障</h3>
+            <p>全方位的云安全防护，确保企业数据和应用的安全性。</p>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>联系我们</h2>
+        <p>如果您有任何问题或需求，请随时与我们联系，我们将为您提供个性化的咨询服务。</p>
+        <form>
+            <input type="text" placeholder="您的姓名" required>
+            <input type="email" placeholder="您的邮箱" required>
+            <textarea placeholder="您的需求" rows="5" required></textarea>
+            <button type="submit">提交</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CloudMesh | 驱动数字化未来</p>
+        <p>关注我们：</p>
+        <a href="https://mp.weixin.qq.com/s/example_link">微信公众号</a> |
+        <a href="https://twitter.com/example">Twitter</a>
+    </footer>
+</body>
+
+</html>

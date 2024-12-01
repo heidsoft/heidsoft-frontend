@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 容器查询示例</title>
+    <style>
+        body {
+            container-type: inline-size;
+            /* 设置容器类型 */
+        }
+
+        .test {
+            font-size: 16px;
+        }
+
+        @container style(font-size: 16px) {
+            .element {
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test">
+        这是一个示例文本，其字体大小为16px，并且当容器的字体大小为16px时，背景色会变为浅蓝色。
+    </div>
+</body>
+
+</html>

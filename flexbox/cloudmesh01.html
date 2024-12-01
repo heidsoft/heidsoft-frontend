@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云与数字化服务 - CloudMesh</title>
+    <style>
+        /* 定义全局CSS变量，用于统一颜色主题 */
+        :root {
+            --primary-color: #2B5BA9;
+            /* 主要品牌色 */
+            --secondary-color: #4A90E2;
+            /* 次要品牌色 */
+            --text-color: #333333;
+            /* 文本颜色 */
+            --background-color: #FFFFFF;
+            /* 背景色 */
+        }
+
+        /* 基础页面样式设置 */
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            /* 中文优先字体 */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+
+        /* 顶部导航栏样式 */
+        nav {
+            position: fixed;
+            /* 固定在顶部 */
+            width: 100%;
+            background: var(--background-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            /* 添加阴影效果 */
+            z-index: 1000;
+            /* 确保导航栏始终在最上层 */
+            padding: 1rem 0;
+        }
+
+        /* 导航栏Logo样式 */
+        nav .logo {
+            float: left;
+            margin-left: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* 导航菜单样式 */
+        nav ul {
+            float: right;
+            margin-right: 2rem;
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        /* 首页横幅区域样式 */
+        header {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        /* 按钮通用样式 */
+        button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* 内容区域通用样式 */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        /* 标题样式 */
+        h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        /* 服务和解决方案卡片网格布局 */
+        .service-grid,
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* 两列布局 */
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 卡片样式 */
+        .service-card,
+        .solution-card {
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* 表单样式 */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* 页脚样式 */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        /* 响应式布局适配 */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                /* 在移动端隐藏导航菜单 */
+            }
+
+            .service-grid,
+            .solution-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+                /* 移动端改为单列布局 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部导航栏 -->
+    <nav>
+        <div class="logo">CloudMesh</div>
+        <ul>
+            <li><a href="#home">首页</a></li>
+            <li><a href="#solutions">解决方案</a></li>
+            <li><a href="#services">技术服务</a></li>
+            <li><a href="#cases">成功案例</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- 首页横幅区域 -->
+    <header id="home">
+        <h1>数字化转型的可靠伙伴</h1>
+        <p>为企业提供全方位的云计算解决方案和数字化转型服务</p>
+        <button>立即咨询</button>
+    </header>
+
+    <!-- 服务介绍区域 -->
+    <section id="services">
+        <h2>我们的服务</h2>
+        <div class="service-grid">
+            <!-- 云服务卡片 -->
+            <div class="service-card">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyQjVCQTkiIHN0cm9rZS13aWR0aD0iMiI+PHBhdGggZD0iTTEwIDNhNyA3IDAgMCAwLTcgN3Y0YTIgMiAwIDAgMCAyIDJoMTRhMiAyIDAgMCAwIDItMnYtNGE3IDcgMCAwIDAtNy03aC00eiIvPjxwYXRoIGQ9Ik0xMiAxNnY0Ii8+PHBhdGggZD0iTTggMjBoOCIvPjwvc3ZnPg=="
+                    alt="云服务">
+                <h3>云服务</h3>
+                <p>提供稳定、安全、高效的云计算基础设施</p>
+            </div>
+            <!-- 数字化转型卡片 -->
+            <div class="service-card">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyQjVCQTkiIHN0cm9rZS13aWR0aD0iMiI+PHBhdGggZD0iTTIyIDEyaC00bC0zIDlMOSAzbC0zIDktSDIiLz48L3N2Zz4="
+                    alt="数字化转型">
+                <h3>数字化转型</h3>
+                <p>助力企业实现业务创新和效率提升</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行业解决方案区域 -->
+    <section id="solutions">
+        <h2>行业解决方案</h2>
+        <div class="solution-grid">
+            <!-- 金融行业解决方案 -->
+            <div class="solution-card">
+                <h3>金融行业</h3>
+                <ul>
+                    <li>金融云平台</li>
+                    <li>数据分析</li>
+                    <li>安全合规</li>
+                </ul>
+            </div>
+            <!-- 制造行业解决方案 -->
+            <div class="solution-card">
+                <h3>制造行业</h3>
+                <ul>
+                    <li>智能制造</li>
+                    <li>工业物联网</li>
+                    <li>供应链优化</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们表单区域 -->
+    <section id="contact">
+        <h2>联系我们</h2>
+        <form>
+            <input type="text" placeholder="公司名称">
+            <input type="text" placeholder="联系人">
+            <input type="email" placeholder="电子邮箱">
+            <textarea placeholder="咨询内容"></textarea>
+            <button type="submit">提交</button>
+        </form>
+    </section>
+
+    <!-- 页脚区域 -->
+    <footer>
+        <div class="footer-content">
+            <div class="company-info">
+                <h3>CloudMesh</h3>
+                <p>专注于提供企业级云服务与数字化解决方案</p>
+            </div>
+            <div class="contact-info">
+                <p>电话：+86 xxx xxxx xxxx</p>
+                <p>邮箱：contact@cloudmesh.top</p>
+                <p>地址：xxx省xxx市xxx区</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
