@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .parent {
+            font-size: 16px;
+        }
+
+        .child {
+            font-size: 1em;
+            /* 此时子元素的字体大小为16px，因为它继承了父元素的字体大小 */
+        }
+    </style>
+
+    <div class="parent">
+        父元素文本
+        <div class="child">子元素文本</div>
+    </div>
+</body>
+
+</html>
